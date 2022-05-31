@@ -12,13 +12,10 @@ describe('My Login application', () => {
     });
 });
 describe('Example', () => {
-    beforeEach(() => {
-        browser.url('https://webdriver.io');
-    });
-
-    it('should save some screenshots', () => {
+    it('should save some screenshots', async () => {
+        await browser.url('https://webdriver.io');
         // Save a screen
-        browser.saveScreen('examplePaged', { /* some options */ });
+        await browser.saveScreen('examplePaged', { /* some options */ });
 
         // // Save an element
         // browser.saveElement($('#element-id'), 'firstButtonElement', { /* some options */ });
@@ -30,9 +27,9 @@ describe('Example', () => {
         // browser.saveTabbablePage('save-tabbable', { /* some options, use the same options as for saveFullPageScreen */ });
     });
 
-    it('should compare successful with a baseline', () => {
+    it('should compare successful with a baseline', async () => {
         // Check a screen
-        expect(browser.checkScreen('examplePaged', { /* some options */ })).toEqual(0);
+        await expect(browser.checkScreen('examplePaged', { /* some options */ })).toEqual(0);
 
         // // Check an element
         // expect(browser.checkElement($('#element-id'), 'firstButtonElement', { /* some options */ })).toEqual(0);
